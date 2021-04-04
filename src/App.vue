@@ -2,64 +2,67 @@
   <v-app>
     <v-navigation-drawer
         v-model="drawer"
-        absolute
         app>
       <v-list dense>
-        <v-list-item link>Accueil</v-list-item>
+        <v-list-item link to="/Accueil">Accueil</v-list-item>
         <v-divider></v-divider>
+        <v-list-item>Projet</v-list-item>
         <v-list-item
-            v-for="item in items"
-            :key="item.title"
+            v-for="projet in projets"
+            :key="projet.title"
+            :to="projet.to"
             link
         >
           <v-list-item-icon>
-            <v-icon>{{ item.icon }}</v-icon>
+            <v-icon>{{ projet.icon }}</v-icon>
           </v-list-item-icon>
 
           <v-list-item-content>
-            <v-list-item-title>{{ item.title }}</v-list-item-title>
+            <v-list-item-title>{{ projet.title }}</v-list-item-title>
 
           </v-list-item-content>
         </v-list-item>
+        <v-divider></v-divider>
+        <v-list-item link to="/Message">
+          <v-list-item-icon>
+            <v-icon>mdi-forum</v-icon>
+          </v-list-item-icon>
+          <v-list-item-title>
+            Me contacter
+          </v-list-item-title>
+        </v-list-item>
+
+
       </v-list>
     </v-navigation-drawer>
     <v-app-bar
         app
-        absolute
         color="white"
         elevate-on-scroll
-        scroll-target="#scrolling-techniques-7"
     >
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
-
-      <v-spacer></v-spacer>
-
-      <v-btn icon>
-        <v-icon>mdi-earth</v-icon>
-      </v-btn>
     </v-app-bar>
     <v-main>
-      <HelloWorld></HelloWorld>
+      <router-view></router-view>
     </v-main>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  },
   data() {
     return{
-      items: [
-        { title: 'Projets', icon: 'mdi-code-tags' },
-        { title: 'Me contacter', icon: 'mdi-forum' },
+      projets: [
+        { title: 'Traking AR', icon: 'mdi-code-tags', to: '/VR' },
+        { title: 'Projet VHDL', icon: 'mdi-code-tags', to: '/VHDL' },
       ],
       drawer: true,
     }
+  },
+  created() {
+    this.$router.push('/Accueil');
   }
 }
 </script>
