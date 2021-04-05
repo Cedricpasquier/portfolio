@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <v-parallax
+    <!--<v-parallax
         dark
         src="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg"
 
@@ -22,7 +22,7 @@
       >
         <div class="text-h4 mb-10 font-weight-thin">Cédric Pasquier</div>
       </v-row>
-    </v-parallax>
+    </v-parallax> -->
     <v-layout class="pa-5" align-center="align-center" justify-center="justify-center">
       <v-sheet
         elevation="10"
@@ -32,7 +32,7 @@
         <v-card-title color="cyan lighten-1" class="text-h4"><v-icon x-large left color="grey darken-1">mdi-account-circle-outline</v-icon> À propos</v-card-title>
         <v-card
           elevation="0"
-          class="ma-5"
+          class="ma-5 pa-5"
           >
           <v-card-text class="text-body-1 text-justify">Je me présente, je m'appelle Cédric, j'ai 23 ans et je suis alternant à Faurecia interior system, vous trouvez ci-dessous mes expérience, mes formations et mes compétences techniques.
             Vous trouverez également une page sur ma mission en alternance et une autre pour me contacter.</v-card-text>
@@ -85,12 +85,14 @@
         </v-timeline>
         <v-card-title class="text-h4"><v-icon x-large left color="grey darken-1">mdi-cog</v-icon> Compétences techniques</v-card-title>
         <v-container class="center">
-          <v-btn-toggle
-            v-model="toggle_exclusive"
-            mandatory
-          >
-          <v-btn @click="competencefilter='tout'">Tout</v-btn> <v-btn @click="competencefilter='applicatif'">Applicatif</v-btn> <v-btn @click="competencefilter='frontend'">Frontend</v-btn> <v-btn @click="competencefilter='backend'">Backend</v-btn> <v-btn @click="competencefilter='applicatif'">Framework</v-btn> <v-btn @click="competencefilter='bdd'">Base de données</v-btn>
-          </v-btn-toggle>
+          <v-item-group>
+            <v-item
+                v-for="button in buttonsfilter"
+                :key="button.time"
+                >
+              <v-btn class="ma-1" :color="competencefilter == button.settype ? 'blue-grey lighten-1' : 'blue-grey lighten-5'" @click="competencefilter=button.settype">{{button.nom}}</v-btn>
+            </v-item>
+          </v-item-group>
         </v-container>
         <v-sheet>
           <v-item-group>
@@ -100,11 +102,15 @@
                 v-show="competence.type==competencefilter || competencefilter=='tout'"
                 >
                   <v-avatar
-                      v-on="on"
                       size="100"
                       class="align-center ma-5"
                   >
-                    <v-img :src=competence.img></v-img>
+                    <v-tooltip bottom>
+                      <template v-slot:activator="{ on }">
+                        <v-img v-on="on" :src=competence.img></v-img>
+                      </template>
+                      <span>{{competence.nom}}</span>
+                    </v-tooltip>
                   </v-avatar>
             </v-item>
           </v-item-group>
@@ -152,6 +158,34 @@ export default {
   },
   data: () => ({
     competencefilter: 'tout',
+    buttonsfilter: [
+      {
+        nom: 'tout',
+        settype: 'tout'
+      },
+      {
+        nom: 'Applicatif',
+        settype: 'applicatif'
+      },
+      {
+        nom: 'Frontend',
+        settype: 'frontend'
+
+      },
+      {
+        nom: 'Backend',
+        settype: 'backend'
+      },
+      {
+        nom: 'Framework',
+        settype: 'framework'
+      },
+      {
+        nom: 'Base de données',
+        settype: 'bdd'
+      }
+
+    ],
     experiences: [
       {
         img: 'https://www.faurecia.com/sites/groupe/files/pages/logo.png',
@@ -226,7 +260,7 @@ export default {
       {
         img: 'https://res.cloudinary.com/vuejsprojects/image/upload/c_scale,f_auto,q_auto,w_400/v1/tag/vuetify.jpg',
         nom: 'Vuetify',
-        type: 'Framework'
+        type: 'framework'
       },
       {
         img: 'https://img2.freepng.fr/20180816/hog/kisspng-jquery-computer-icons-port-jquery-icon-shared-by-astrid-1-2565-jmkxyy-5b7604c36a3628.8858824415344611234351.jpg',
@@ -266,18 +300,4 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
 </style>
