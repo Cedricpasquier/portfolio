@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <!--<v-parallax
+    <v-parallax
         dark
         src="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg"
 
@@ -22,7 +22,7 @@
       >
         <div class="text-h4 mb-10 font-weight-thin">Cédric Pasquier</div>
       </v-row>
-    </v-parallax> -->
+    </v-parallax>
     <v-layout class="pa-5" align-center="align-center" justify-center="justify-center">
       <v-sheet
         elevation="10"
