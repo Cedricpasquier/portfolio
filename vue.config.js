@@ -1,3 +1,3 @@
 module.exports = {
-    publicPath: '/Dedridec.github.io/'
+    publicPath: '/portfolio/'
 }
