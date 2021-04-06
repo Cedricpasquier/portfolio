@@ -32,15 +32,16 @@
           </v-list-item-title>
         </v-list-item>
         <v-divider></v-divider>
-        <a href="Cedric_PASQUIER_CV.pdf" style="text-decoration: none;" download>
-        <v-list-item @click="download">
+        <!-- <a href="Cedric_PASQUIER_CV.pdf" style="text-decoration: none;" download> -->
+        <v-list-item @click="downloadWithAxios">
           <v-list-item-icon>
             <v-icon>mdi-download</v-icon>
           </v-list-item-icon>
           <v-list-item-title>
             Mon CV
           </v-list-item-title>
-        </v-list-item></a>
+        </v-list-item>
+        <!-- </a>-->
 
       </v-list>
     </v-navigation-drawer>
@@ -58,6 +59,7 @@
 </template>
 
 <script>
+import axios from 'axios';
 export default {
   name: 'App',
   data() {
@@ -73,21 +75,25 @@ export default {
     this.$router.push('/Accueil');
   },
   methods: {
-    download() {
-      /*axios({
-        src: 'http://localhost:8080/Cedric_PASQUIER_CV.pfd',
-        method: 'GET',
-        responseType: 'blob',
-      }).then((response) => {
-        var fileURL = window.URL.createObjectURL(new Blob([response.data]));
-        var fileLink = document.createElement('a');
-
-        fileLink.href = fileURL;
-        fileLink.setAttribute('download', 'file.pdf');
-        document.body.appendChild(fileLink);
-
-        fileLink.click();
-      });*/
+    forceFileDownload(response, title) {
+      console.log(title)
+      const url = window.URL.createObjectURL(new Blob([response.data]))
+      const link = document.createElement('a')
+      link.href = url
+      link.setAttribute('download', 'Cedric_PASQUIER_CV.pdf')
+      document.body.appendChild(link)
+      link.click()
+    },
+    downloadWithAxios() {
+      axios({
+        method: 'get',
+        url: 'https://dedridec.github.io/portfolio/Cedric_PASQUIER_CV.pdf',
+        responseType: 'arraybuffer',
+      })
+          .then((response) => {
+            this.forceFileDownload(response)
+          })
+          .catch(() => console.log('error occured'))
     }
   }
 }
