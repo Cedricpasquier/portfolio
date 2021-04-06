@@ -215,7 +215,7 @@ export default {
         nom: 'Baccalaureat en Informatique',
         etablissement: 'Université du Québec à Chicoutimi',
         duree: '1 ans',
-        date: '2019'
+        date: '2018 - 2019'
       },
       {
         img: 'https://lh3.googleusercontent.com/proxy/tU0d4tGK94IPn0tNHl9SkGFevm18SvrSYPh9k5Y2whb_S7im7BM_7D0D3e0VHxhS6HOaSju_M3rHjPuZy3MMNBg9aepJHjKjWKIGOIePM70GwnA',
