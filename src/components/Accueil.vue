@@ -411,21 +411,21 @@ export default {
             'but était de tracker le visage afin de lui appliquer un filtre et de le changer par un appui de bouton' +
             ' ou de mouvement de tête',
         img: 'https://drive.google.com/uc?export=view&id=1ZA2YRZXNpzOr2KnOE44lV987_shz-n3_',
-        path:'/VR'
+        path:'/portfolio/VR'
       },
       {
         nom: 'Site d\'organisation d\'évenements',
         description: 'Développement d\'un site en Vue, Spring et MySQL permettant de créer des événements'+
         'et de proposer des dates. Les autres utilisateurs peuvent les voir et donner leur disponibilité.',
         img: 'https://drive.google.com/uc?export=view&id=1t8y48LkuYV8ITyvmZGDHCs6WWuxNwxzg',
-        path:'/Website'
+        path:'/portfolio/Website'
       },
       {
         nom: 'Affichage distance sur carte VHDL',
         description: 'Programmation d\'une carte FPGA avec un capteur à ultrason\n' +
             '                afin d\'afficher la distance calculée.',
         img: 'https://drive.google.com/uc?export=view&id=1BnMb_z-lpokxsdUW8UpDvLcOZfueWqDh',
-        path:'/VHDL'
+        path:'/portfolio/VHDL'
       }
     ]
   }),

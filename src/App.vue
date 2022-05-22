@@ -51,7 +51,7 @@
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
       <v-toolbar-title>Portfolio</v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-btn icon to="/Accueil" >
+      <v-btn icon to="/portfolio/Accueil" >
         <v-icon>mdi-home</v-icon>
       </v-btn>
 
@@ -69,15 +69,15 @@ export default {
   data() {
     return{
       projets: [
-        { title: 'Traking AR', icon: 'mdi-code-tags', to: '/VR' },
-        { title: 'Site d\'évenements', icon: 'mdi-code-tags', to: '/Website' },
-        { title: 'Projet VHDL', icon: 'mdi-code-tags', to: '/VHDL' },
+        { title: 'Traking AR', icon: 'mdi-code-tags', to: '/portfolio/VR' },
+        { title: 'Site d\'évenements', icon: 'mdi-code-tags', to: '/portfolio/Website' },
+        { title: 'Projet VHDL', icon: 'mdi-code-tags', to: '/portfolio/VHDL' },
       ],
       drawer: true,
     }
   },
   created() {
-    this.$router.push('/Accueil');
+    this.$router.push('/portfolio/Accueil');
   },
   methods: {
     forceFileDownload(response, title) {

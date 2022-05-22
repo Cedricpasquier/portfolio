@@ -15,11 +15,11 @@ Vue.config.productionTip = false
 Vue.use(VueRouter);
 
 const routes = [
-  {path: '/Accueil', component: Accueil},
-  {path: '/VHDL', component: VHDL},
-  {path: '/Website', component: WebSite},
-  {path: '/VR', component: VR},
-  {path: '/Message', component: message}
+  {path: '/portfolio/Accueil', component: Accueil},
+  {path: '/portfolio/VHDL', component: VHDL},
+  {path: '/portfolio/Website', component: WebSite},
+  {path: '/portfolio/VR', component: VR},
+  {path: '/portfolio/Message', component: message}
 ];
 
 const router = new VueRouter({
