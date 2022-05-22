@@ -92,7 +92,7 @@ export default {
     downloadWithAxios() {
       axios({
         method: 'get',
-        url: 'https://dedridec.github.io/portfolio/CV_Cedric_PASQUIER_Quebec_Web',
+        url: 'https://cedricpasquier.github.io/portfolio/CV_Cedric_PASQUIER_Quebec_Web.pdf',
         responseType: 'arraybuffer',
       })
           .then((response) => {
