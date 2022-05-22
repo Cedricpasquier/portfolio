@@ -39,9 +39,8 @@
             class="ma-5 pa-5"
         >
           <v-card-text class="text-body-1 text-justify">Je me présente,
-            je m'appelle Cédric, j'ai 24 ans, etant actuellement en dernière année d'école d'ingénieur à l'école ESIEA,
+            je m'appelle Cédric, j'ai 24 ans, étant actuellement en dernière année d'école d'ingénieur à l'école ESIEA,
             je suis à la recherche d'une opportunité en ville de Québec en tant que développeur logiciel.
-            Vous trouverez également une page sur ma mission en alternance et une autre pour me contacter.
           </v-card-text>
         </v-card>
 
@@ -193,38 +192,23 @@
           Projets
         </v-card-title>
         <v-card
+            v-for="projet in projets"
+            :key="projet.time"
             elevation="10"
             class="pa-5 ma-5"
-            to="/VR"
+            :to="projet.path"
         >
           <v-row>
             <v-col cols="3">
               <v-img class="ma-2" max-width="150"
-                     src="https://img.utdstc.com/icon/5b0/443/5b044358e015aa2051bc6ee4799870b97f92d9677a2fb7f6bc016ee508d3db0f:200"></v-img>
+                     :src="projet.img"></v-img>
             </v-col>
             <v-col>
-              <v-card-title>Traking de visage AR</v-card-title>
-              <v-card-text class="text-body-1 text-justify">Projet en réalité virtuel réalisé avec Unity est ARcore, le
-                but était de tracker le visage afin de lui appliquer un filtre et de le changer par un appui de boutton
-                ou de mouvement de tête
-              </v-card-text>
-            </v-col>
-          </v-row>
-        </v-card>
-        <v-card
-            elevation="10"
-            class="pa-5 ma-5"
-            to="/VHDL"
-        >
-          <v-row>
-            <v-col cols="3">
-              <v-img class="ma-2" max-width="150"
-                     src="https://boutique.3sigma.fr/487-large_default/capteur-de-distance-ultrason-hc-sr04.jpg"></v-img>
-            </v-col>
-            <v-col>
-              <v-card-title>Affichage distance sur carte VHDL</v-card-title>
-              <v-card-text class="text-body-1 text-justify">Programmation d'une carte FPGA avec un capteur à ultrason
-                afin d'afficher la distance calculée.
+              <v-card-title>
+                {{projet.nom}}
+              </v-card-title>
+              <v-card-text class="text-body-1 text-justify">
+                {{projet.description}}
               </v-card-text>
             </v-col>
           </v-row>
@@ -260,10 +244,6 @@ export default {
       {
         nom: 'Backend',
         settype: 'backend'
-      },
-      {
-        nom: 'Framework',
-        settype: 'framework'
       },
       {
         nom: 'Base de données',
@@ -355,7 +335,7 @@ export default {
       {
         img: 'https://drive.google.com/uc?export=view&id=1fxzDhEU2x42kgiYwdGZgDTF58DrBqNUx',
         nom: 'Vuetify',
-        type: 'framework'
+        type: 'frontend'
       },
       {
         img: 'https://drive.google.com/uc?export=view&id=1_2IY-nUlzN5aNO2nMwAI3yqwj3TiTEIA',
@@ -386,9 +366,68 @@ export default {
         img: 'https://drive.google.com/uc?export=view&id=1rJP6my7YKew4wNeleFEYVKzYSRNUG5zP',
         nom: 'MySQL',
         type: 'bdd'
+      },
+      {
+        img: 'https://drive.google.com/uc?export=view&id=1aZS9Z-4mjK5gtHu7ooeWSFBT51aHp3KQ',
+        nom: 'Angular',
+        type: 'frontend'
+      },
+      {
+        img: 'https://drive.google.com/uc?export=view&id=1PWgDVGXkeK3A7y0LLrsMEQVH3phclRAH',
+        nom: 'Apache Spark',
+        type: 'bdd'
+      },
+      {
+        img: 'https://drive.google.com/uc?export=view&id=1mHhS942iGjNyu-pY9Keco2SQ6CLOkueN',
+        nom: 'C#',
+        type: 'applicatif'
+      },
+      {
+        img: 'https://drive.google.com/uc?export=view&id=1KdSCvyc5wgpAcSC3j-UiZ0ndnevAXKB1',
+        nom: 'Node.js',
+        type: 'backend'
+      },
+
+      {
+        nom: 'JavaScript',
+        img: 'https://drive.google.com/uc?export=view&id=1PgUqkT5eMyrfr9uOWHVMry6rfXxaFkYg',
+        type: 'applicatif'
+      },
+      {
+        img: 'https://drive.google.com/uc?export=view&id=1ZBLggiz2SpbkF9sOUd7BRjPhar6lH-1I',
+        nom: 'Docker',
+        type: 'applicatif'
+      },
+      {
+        nom: 'Axios',
+        img: 'https://drive.google.com/uc?export=view&id=19_-WpkYUT-Iruy2BRZ_wTt8nFUaDSRJb',
+        type: 'backend'
+      }
+    ],
+    projets: [
+      {
+        nom: 'Traking de visage AR',
+        description: 'Un projet en réalité virtuel réalisé avec Unity est ARcore, le' +
+            'but était de tracker le visage afin de lui appliquer un filtre et de le changer par un appui de bouton' +
+            ' ou de mouvement de tête',
+        img: 'https://drive.google.com/uc?export=view&id=1ZA2YRZXNpzOr2KnOE44lV987_shz-n3_',
+        path:'/VR'
+      },
+      {
+        nom: 'Site d\'organisation d\'évenements',
+        description: 'Développement d\'un site en Vue, Spring et MySQL permettant de créer des événements'+
+        'et de proposer des dates. Les autres utilisateurs peuvent les voir et donner leur disponibilité.',
+        img: 'https://drive.google.com/uc?export=view&id=1t8y48LkuYV8ITyvmZGDHCs6WWuxNwxzg',
+        path:'/Website'
+      },
+      {
+        nom: 'Affichage distance sur carte VHDL',
+        description: 'Programmation d\'une carte FPGA avec un capteur à ultrason\n' +
+            '                afin d\'afficher la distance calculée.',
+        img: 'https://drive.google.com/uc?export=view&id=1BnMb_z-lpokxsdUW8UpDvLcOZfueWqDh',
+        path:'/VHDL'
       }
     ]
-
   }),
 }
 </script>

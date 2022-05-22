@@ -7,6 +7,7 @@ import VHDL from './components/VHDL'
 import VR from './components/VR'
 import message from './components/message'
 import Embed from 'v-video-embed'
+import WebSite from "@/components/WebSite";
 
 Vue.use(Embed);
 
@@ -16,6 +17,7 @@ Vue.use(VueRouter);
 const routes = [
   {path: '/Accueil', component: Accueil},
   {path: '/VHDL', component: VHDL},
+  {path: '/Website', component: WebSite},
   {path: '/VR', component: VR},
   {path: '/Message', component: message}
 ];

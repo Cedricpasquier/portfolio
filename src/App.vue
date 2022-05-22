@@ -45,7 +45,7 @@
     </v-navigation-drawer>
     <v-app-bar
         app
-        color="white"
+        color="blue darken-1"
         elevate-on-scroll
     >
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
@@ -70,6 +70,7 @@ export default {
     return{
       projets: [
         { title: 'Traking AR', icon: 'mdi-code-tags', to: '/VR' },
+        { title: 'Site d\'évenements', icon: 'mdi-code-tags', to: '/Website' },
         { title: 'Projet VHDL', icon: 'mdi-code-tags', to: '/VHDL' },
       ],
       drawer: true,
