@@ -4,8 +4,6 @@
         v-model="drawer"
         app>
       <v-list dense>
-        <v-list-item link to="/Accueil">Accueil</v-list-item>
-        <v-divider></v-divider>
         <v-list-item>Projet</v-list-item>
         <v-list-item
             v-for="projet in projets"
@@ -51,6 +49,12 @@
         elevate-on-scroll
     >
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
+      <v-toolbar-title>Portfolio</v-toolbar-title>
+      <v-spacer></v-spacer>
+      <v-btn icon to="/Accueil" >
+        <v-icon>mdi-home</v-icon>
+      </v-btn>
+
     </v-app-bar>
     <v-main>
       <router-view></router-view>
@@ -87,7 +91,7 @@ export default {
     downloadWithAxios() {
       axios({
         method: 'get',
-        url: 'https://dedridec.github.io/portfolio/Cedric_PASQUIER_CV.pdf',
+        url: 'https://dedridec.github.io/portfolio/CV_Cedric_PASQUIER_Quebec_Web',
         responseType: 'arraybuffer',
       })
           .then((response) => {
