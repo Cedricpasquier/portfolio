@@ -33,8 +33,8 @@
             de délocaliser les données du site sur un base de données accessible depuis l'API. Le site comporte également
             des sessions pour chaque utilisateur avec un token, ces tokens son géré par Firebase.<br />
             Ce projet est disponible sur Github : <br />
-            - <a href="https://github.com/Cedricpasquier/Projet_PWOM_Front">Projet PWOM Front</a><br />
-            - <a href="https://github.com/Cedricpasquier/Projet_PWOM_Back">Projet PWOM Back</a>
+            - <a href="https://github.com/Cedricpasquier/Projet_PWOM_Front" target="_blank">Projet PWOM Front</a><br />
+            - <a href="https://github.com/Cedricpasquier/Projet_PWOM_Back" target="_blank">Projet PWOM Back</a>
           </v-card-text>
         </v-card>
         <v-row class="ma-5 pa-5">

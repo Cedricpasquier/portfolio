@@ -19,7 +19,9 @@ const routes = [
   {path: '/portfolio/VHDL', component: VHDL},
   {path: '/portfolio/Website', component: WebSite},
   {path: '/portfolio/VR', component: VR},
-  {path: '/portfolio/Message', component: message}
+  {path: '/portfolio/Message', component: message},
+  // will match everything and put it under `$route.params.pathMatch`
+  { path: '/:pathMatch(.*)*', name: 'NotFound', component: Accueil },
 ];
 
 const router = new VueRouter({

@@ -21,7 +21,7 @@
           </v-list-item-content>
         </v-list-item>
         <v-divider></v-divider>
-        <v-list-item link to="/Message">
+        <v-list-item link to="/portfolio/Message">
           <v-list-item-icon>
             <v-icon>mdi-forum</v-icon>
           </v-list-item-icon>

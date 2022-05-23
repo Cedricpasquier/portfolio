@@ -9,7 +9,7 @@
           align="center"
           justify="center"
       >
-        <a href="https://www.linkedin.com/in/cedric-pasquier-003284133/">
+        <a href="https://www.linkedin.com/in/cedric-pasquier-003284133/" target="_blank">
         <v-avatar
             size="300"
             class="align-center"
@@ -67,7 +67,7 @@
                   class="pa-10 mr-10"
               >
                 <v-row>
-                  <v-col><a :href="experience.lien">
+                  <v-col><a :href="experience.lien" target="_blank">
                     <v-img :max-width="150" :src="experience.img"></v-img>
                   </a></v-col>
                   <v-col>
@@ -116,8 +116,8 @@
                   class="pa-10 mr-10"
               >
                 <v-row>
-                  <v-col><a :href="formation.lien">
-                    <v-img :href="formation.lien" max-width="150" :src="formation.img"></v-img>
+                  <v-col><a :href="formation.lien" target="_blank">
+                    <v-img max-width="150" :src="formation.img"></v-img>
                   </a></v-col>
                   <v-col>
                     <div class="ma-5 title font-weight-bold ">{{ formation.nom }}</div>
